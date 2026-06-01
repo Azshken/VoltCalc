@@ -130,14 +130,11 @@
         line-height: 1.2;
         font-family: var(--font-display);
       }
-
       .app-wrapper {
         max-width: 1100px;
         margin-inline: auto;
         padding: var(--space-8) var(--space-4);
       }
-
-      /* Header */
       .app-header {
         display: flex;
         align-items: center;
@@ -190,8 +187,6 @@
         color: var(--color-text);
         box-shadow: var(--shadow-sm);
       }
-
-      /* Hero */
       .hero {
         text-align: center;
         margin-bottom: var(--space-12);
@@ -210,8 +205,6 @@
         margin-inline: auto;
         line-height: 1.7;
       }
-
-      /* Distance */
       .distance-section {
         margin-bottom: var(--space-8);
       }
@@ -279,14 +272,6 @@
         background: var(--color-primary);
         border: 3px solid var(--color-surface);
         box-shadow: 0 2px 8px rgba(0, 124, 140, 0.4);
-        transition:
-          transform var(--transition),
-          box-shadow var(--transition);
-      }
-      .distance-slider:hover::-webkit-slider-thumb,
-      .distance-slider:focus::-webkit-slider-thumb {
-        transform: scale(1.15);
-        box-shadow: 0 2px 16px rgba(0, 124, 140, 0.5);
       }
       .distance-slider::-moz-range-thumb {
         width: 22px;
@@ -294,8 +279,6 @@
         border-radius: 50%;
         background: var(--color-primary);
         border: 3px solid var(--color-surface);
-        box-shadow: 0 2px 8px rgba(0, 124, 140, 0.4);
-        cursor: pointer;
       }
       .slider-labels {
         display: flex;
@@ -303,8 +286,6 @@
         font-size: var(--text-xs);
         color: var(--color-text-faint);
       }
-
-      /* Comparison grid */
       .comparison-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -316,8 +297,6 @@
           grid-template-columns: 1fr;
         }
       }
-
-      /* Vehicle cards */
       .vehicle-card {
         background: var(--color-surface);
         border: 1.5px solid var(--color-border);
@@ -362,12 +341,6 @@
         font-size: var(--text-sm);
         font-weight: 500;
         color: var(--color-text-muted);
-        transition:
-          background var(--transition),
-          color var(--transition),
-          box-shadow var(--transition);
-        cursor: pointer;
-        border: none;
         background: transparent;
         white-space: nowrap;
       }
@@ -429,10 +402,6 @@
         color: var(--color-text-muted);
         font-size: 18px;
         line-height: 1;
-        transition:
-          background var(--transition),
-          color var(--transition);
-        flex-shrink: 0;
       }
       .vc-stepper button:hover {
         background: var(--color-divider);
@@ -443,11 +412,12 @@
         font-weight: 600;
         font-size: var(--text-sm);
         color: var(--color-text);
-        min-width: 36px;
+        min-width: 48px;
         text-align: center;
         font-variant-numeric: tabular-nums;
       }
-      .vc-price-row {
+      .vc-price-row,
+      .vc-per100-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -455,7 +425,8 @@
         padding-top: var(--space-3);
         border-top: 1px solid var(--color-divider);
       }
-      .vc-price-label {
+      .vc-price-label,
+      .vc-per100-label {
         font-size: var(--text-xs);
         color: var(--color-text-muted);
       }
@@ -467,14 +438,6 @@
         border: 1px solid var(--color-border);
         border-radius: var(--radius-md);
         padding: var(--space-1) var(--space-3);
-        transition:
-          border-color var(--transition),
-          box-shadow var(--transition);
-      }
-      .vc-price-input-wrap:focus-within {
-        border-color: var(--color-primary);
-        box-shadow: 0 0 0 3px
-          color-mix(in oklch, var(--color-primary) 15%, transparent);
       }
       .vc-price-input {
         width: 64px;
@@ -493,27 +456,12 @@
         color: var(--color-text-muted);
         white-space: nowrap;
       }
-
-      /* Cost per 100km row */
-      .vc-per100-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: var(--space-3);
-        padding-top: var(--space-3);
-        border-top: 1px solid var(--color-divider);
-      }
-      .vc-per100-label {
-        font-size: var(--text-xs);
-        color: var(--color-text-muted);
-      }
       .vc-per100-val {
         font-family: var(--font-display);
         font-weight: 700;
         font-size: var(--text-base);
         font-variant-numeric: tabular-nums;
       }
-
       .vc-total {
         display: flex;
         align-items: baseline;
@@ -529,7 +477,6 @@
         font-weight: 700;
         font-variant-numeric: tabular-nums;
         letter-spacing: -0.03em;
-        transition: color var(--transition);
       }
       .vc-total-currency {
         font-size: var(--text-sm);
@@ -537,8 +484,6 @@
         font-weight: 600;
         margin-left: 2px;
       }
-
-      /* Savings banner */
       .savings-banner {
         background: linear-gradient(
           135deg,
@@ -553,21 +498,6 @@
         gap: var(--space-6);
         margin-bottom: var(--space-6);
         box-shadow: var(--shadow-lg);
-        position: relative;
-        overflow: hidden;
-      }
-      .savings-banner::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 20px,
-          rgba(255, 255, 255, 0.03) 20px,
-          rgba(255, 255, 255, 0.03) 21px
-        );
-        pointer-events: none;
       }
       .savings-banner-left {
         display: flex;
@@ -592,7 +522,7 @@
       }
       .savings-sub {
         font-size: var(--text-xs);
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.7);
       }
       .savings-amount {
         font-family: var(--font-display);
@@ -602,10 +532,7 @@
         font-variant-numeric: tabular-nums;
         letter-spacing: -0.03em;
         white-space: nowrap;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       }
-
-      /* Stats */
       .section-title {
         font-size: var(--text-base);
         font-weight: 700;
@@ -655,9 +582,6 @@
         font-variant-numeric: tabular-nums;
         letter-spacing: -0.02em;
       }
-      .stat-val.accent {
-        color: var(--color-primary);
-      }
       .stat-val.ev {
         color: var(--color-ev);
       }
@@ -667,8 +591,6 @@
         margin-top: var(--space-1);
         line-height: 1.4;
       }
-
-      /* Tooltip */
       .tooltip-wrap {
         position: relative;
         display: inline-flex;
@@ -687,10 +609,6 @@
         justify-content: center;
         cursor: help;
         font-weight: 700;
-        transition: background var(--transition);
-      }
-      .tooltip-trigger:hover {
-        background: var(--color-divider);
       }
       .tooltip-box {
         display: none;
@@ -703,7 +621,7 @@
         font-size: var(--text-xs);
         padding: var(--space-2) var(--space-3);
         border-radius: var(--radius-md);
-        width: 200px;
+        width: 220px;
         line-height: 1.5;
         z-index: 100;
         pointer-events: none;
@@ -713,8 +631,6 @@
       .tooltip-wrap:focus-within .tooltip-box {
         display: block;
       }
-
-      /* ===== EV TABLE ===== */
       .ev-table-card {
         background: var(--color-surface);
         border: 1px solid var(--color-border);
@@ -751,7 +667,20 @@
         border-radius: var(--radius-md);
         border: 1px solid var(--color-border);
       }
-
+      .table-mode-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: 0;
+        color: inherit;
+        font: inherit;
+        font-weight: inherit;
+        text-transform: inherit;
+        letter-spacing: inherit;
+      }
+      .table-mode-btn:hover {
+        color: var(--color-primary);
+      }
       .ev-table-scroll {
         overflow-x: auto;
       }
@@ -773,7 +702,8 @@
         white-space: nowrap;
         border-bottom: 1px solid var(--color-divider);
       }
-      th:last-child {
+      th:last-child,
+      td:last-child {
         text-align: right;
       }
       td {
@@ -782,9 +712,6 @@
         color: var(--color-text);
         border-bottom: 1px solid var(--color-divider);
         vertical-align: middle;
-      }
-      td:last-child {
-        text-align: right;
       }
       tbody tr:last-child td {
         border-bottom: none;
@@ -799,10 +726,6 @@
       tbody tr.selected-row {
         background: var(--color-primary-highlight);
       }
-      tbody tr.selected-row td {
-        color: var(--color-text);
-      }
-
       .ev-model-cell {
         display: flex;
         align-items: center;
@@ -822,7 +745,6 @@
         color: var(--color-text-muted);
         margin-top: 1px;
       }
-
       .cons-badge {
         display: inline-flex;
         align-items: center;
@@ -844,12 +766,18 @@
         background: var(--color-surface-offset);
         color: var(--color-text-muted);
       }
-
+      .cons-na {
+        background: var(--color-surface-offset);
+        color: var(--color-text-faint);
+      }
       .yearly-cost-cell {
         font-family: var(--font-display);
         font-weight: 700;
         font-variant-numeric: tabular-nums;
         color: var(--color-ev);
+      }
+      .yearly-cost-cell.na {
+        color: var(--color-text-faint);
       }
       .use-btn {
         padding: var(--space-1) var(--space-3);
@@ -860,10 +788,6 @@
         color: var(--color-primary);
         border: 1px solid
           color-mix(in oklch, var(--color-primary) 25%, transparent);
-        transition:
-          background var(--transition),
-          color var(--transition),
-          box-shadow var(--transition);
         white-space: nowrap;
       }
       .use-btn:hover {
@@ -871,7 +795,10 @@
         color: var(--color-text-inverse);
         box-shadow: var(--shadow-sm);
       }
-
+      .use-btn[disabled] {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
       .disclaimer {
         font-size: var(--text-xs);
         color: var(--color-text-faint);
@@ -881,7 +808,6 @@
         padding-top: var(--space-6);
         border-top: 1px solid var(--color-divider);
       }
-
       @media (max-width: 520px) {
         .app-wrapper {
           padding: var(--space-4) var(--space-3);
@@ -952,7 +878,6 @@
         </p>
       </div>
 
-      <!-- DISTANCE SLIDER -->
       <div class="distance-section">
         <div class="card">
           <div class="distance-header">
@@ -981,10 +906,7 @@
       </div>
 
       <div class="section-title">Annual cost comparison</div>
-
-      <!-- COMPARISON GRID -->
       <div class="comparison-grid">
-        <!-- PETROL / DIESEL / HYBRID -->
         <div class="vehicle-card" id="petrolCard">
           <div class="vc-header">
             <div class="vc-tabs" role="tablist" aria-label="Fuel type">
@@ -1088,7 +1010,6 @@
           </div>
         </div>
 
-        <!-- EV CARD -->
         <div class="vehicle-card ev-card">
           <div class="vc-header">
             <div class="ev-badge">
@@ -1124,7 +1045,7 @@
                   +
                 </button>
               </div>
-              <span class="vc-price-unit">kWh/100km</span>
+              <span class="vc-price-unit" id="evConsUnit">kWh/100km</span>
             </div>
             <div class="vc-price-row">
               <span class="vc-price-label">Electricity price</span>
@@ -1179,7 +1100,6 @@
         </div>
       </div>
 
-      <!-- SAVINGS BANNER -->
       <div class="savings-banner" id="savingsBanner">
         <div class="savings-banner-left">
           <div class="savings-icon">
@@ -1209,7 +1129,6 @@
         <div class="savings-amount" id="savingsAmount">– EUR</div>
       </div>
 
-      <!-- RUNNING COST STATS -->
       <div class="section-title">Running cost stats</div>
       <div class="breakeven-card">
         <div class="breakeven-grid">
@@ -1228,25 +1147,37 @@
         </div>
       </div>
 
-      <!-- EV WLTP TABLE -->
-      <div class="section-title">Popular EV models — WLTP consumption</div>
+      <div class="section-title">Popular EV models — EVKX consumption data</div>
       <div class="ev-table-card">
         <div class="ev-table-header">
           <div>
-            <div class="ev-table-title">Most popular EVs in Europe (2025)</div>
+            <div class="ev-table-title">
+              Selected EVs — EVKX WLTP and real-world cruise consumption
+            </div>
             <div class="ev-table-subtitle">
-              Click a row to load its consumption into the calculator
+              Click a row to load its selected consumption into the calculator
             </div>
           </div>
-          <div class="ev-table-note">Real-world avg: ~189 Wh/km</div>
+          <div class="ev-table-note" id="evTableModeNote">
+            Mode: WLTP combined
+          </div>
         </div>
         <div class="ev-table-scroll">
-          <table aria-label="Popular EV WLTP consumption data">
+          <table aria-label="Popular EV consumption data">
             <thead>
               <tr>
                 <th>Model</th>
                 <th>Segment</th>
-                <th>WLTP kWh/100km</th>
+                <th>
+                  <button
+                    class="table-mode-btn"
+                    id="tableModeBtn"
+                    type="button"
+                    aria-label="Switch consumption column"
+                  >
+                    WLTP kWh/100km
+                  </button>
+                </th>
                 <th>Yearly cost *</th>
                 <th></th>
               </tr>
@@ -1258,257 +1189,217 @@
 
       <p class="disclaimer">
         * Yearly cost calculated using the electricity price and distance set
-        above. WLTP consumption figures from ev-database.org. This calculator is
-        for informational purposes only and does not include vehicle purchase
-        price, maintenance, insurance, or other ownership costs.
+        above. Consumption, WLTP range, and real-range cruise estimates are
+        based on EVKX data. The 90 km/h and 120 km/h modes use EVKX real-world
+        “perfect condition” figures where available; unavailable values are
+        shown as N/A. This calculator is for informational purposes only and
+        does not include vehicle purchase price, maintenance, insurance, or
+        other ownership costs.
       </p>
     </div>
 
     <script>
-      // ===== EV DATA (WLTP, ev-database.org real-world, popular European models) =====
       const evModels = [
-        // Model, variant, kWh/100km (real-world adjusted from Wh/km figures), segment, color
-        {
-          model: "Tesla Model Y",
-          variant: "RWD (Standard)",
-          cons: 15.8,
-          segment: "SUV",
-          color: "#e11d48",
-        },
         {
           model: "Tesla Model Y",
           variant: "Long Range RWD",
-          cons: 15.7,
           segment: "SUV",
           color: "#e11d48",
-        },
-        {
-          model: "Tesla Model Y",
-          variant: "Performance AWD",
-          cons: 17.2,
-          segment: "SUV",
-          color: "#e11d48",
+          wltp: 12.7,
+          c90: 15.0,
+          c120: 19.5,
         },
         {
           model: "Tesla Model 3",
-          variant: "RWD",
-          cons: 13.3,
+          variant: "Long Range RWD",
           segment: "Sedan",
           color: "#dc2626",
-        },
-        {
-          model: "Tesla Model 3",
-          variant: "Long Range AWD",
-          cons: 14.2,
-          segment: "Sedan",
-          color: "#dc2626",
-        },
-        {
-          model: "Škoda Elroq",
-          variant: "60 (59 kWh)",
-          cons: 16.8,
-          segment: "SUV",
-          color: "#16a34a",
+          wltp: 10.93,
+          c90: 11.5,
+          c120: 15,
         },
         {
           model: "Škoda Elroq",
           variant: "85 (77 kWh)",
-          cons: 17.1,
           segment: "SUV",
           color: "#16a34a",
+          wltp: 13.75,
+          c90: 14,
+          c120: 21,
         },
         {
           model: "Škoda Enyaq",
           variant: "85 (77 kWh) RWD",
-          cons: 15.7,
           segment: "SUV",
           color: "#16a34a",
-        },
-        {
-          model: "Škoda Enyaq",
-          variant: "60 (59 kWh) RWD",
-          cons: 16.8,
-          segment: "SUV",
-          color: "#16a34a",
+          wltp: 13.14,
+          c90: 15.5,
+          c120: 21,
         },
         {
           model: "Renault 4 E-Tech",
           variant: "52 kWh 150hp",
-          cons: 16.5,
           segment: "Crossover",
-          color: "#d97706",
+          color: "#f59e0b",
+          wltp: 12.71,
+          c90: 14.69,
+          c120: 19.92,
         },
         {
           model: "Renault 5 E-Tech",
           variant: "52 kWh 150hp",
-          cons: 15.2,
           segment: "Hatchback",
           color: "#f59e0b",
-        },
-        {
-          model: "Renault 5 E-Tech",
-          variant: "40 kWh 120hp",
-          cons: 14.6,
-          segment: "Hatchback",
-          color: "#f59e0b",
+          wltp: 13,
+          c90: 14.69,
+          c120: 22,
         },
         {
           model: "Hyundai Kona Electric",
           variant: "64.8 kWh Long Range",
-          cons: 14.8,
           segment: "Crossover",
           color: "#0891b2",
-        },
-        {
-          model: "Hyundai Kona Electric",
-          variant: "48.4 kWh Standard",
-          cons: 16.8,
-          segment: "Crossover",
-          color: "#0891b2",
+          wltp: 12.72,
+          c90: 16.83,
+          c120: 22.82,
         },
         {
           model: "Hyundai IONIQ 6",
           variant: "84 kWh RWD",
-          cons: 14.7,
           segment: "Sedan",
           color: "#0891b2",
-        },
-        {
-          model: "Hyundai IONIQ 6",
-          variant: "84 kWh AWD",
-          cons: 15.4,
-          segment: "Sedan",
-          color: "#0891b2",
+          wltp: 12.05,
+          c90: 13,
+          c120: 19.02,
         },
         {
           model: "Hyundai IONIQ 5",
-          variant: "84 kWh RWD",
-          cons: 17.8,
+          variant: "84 kWh AWD",
           segment: "SUV",
           color: "#0891b2",
-        },
-        {
-          model: "Volkswagen ID.4",
-          variant: "Pure (52 kWh)",
-          cons: 17.1,
-          segment: "SUV",
-          color: "#2563eb",
+          wltp: 14.65,
+          c90: 16.99,
+          c120: 24.02,
         },
         {
           model: "Volkswagen ID.4",
           variant: "Pro (77 kWh)",
-          cons: 17.2,
           segment: "SUV",
           color: "#2563eb",
-        },
-        {
-          model: "Volkswagen ID.3",
-          variant: "Neo 58 kWh",
-          cons: 15.9,
-          segment: "Hatchback",
-          color: "#2563eb",
+          wltp: 14.56,
+          c90: 14.5,
+          c120: 21.5,
         },
         {
           model: "Volkswagen ID.3",
           variant: "Neo 79 kWh",
-          cons: 16.1,
           segment: "Hatchback",
           color: "#2563eb",
+          wltp: 12.56,
+          c90: 14.99,
+          c120: 22,
         },
         {
           model: "Kia EV6",
           variant: "Long Range RWD",
-          cons: 17.6,
           segment: "Crossover",
           color: "#ea580c",
+          wltp: 13.75,
+          c90: 17.5,
+          c120: 23.53,
         },
         {
           model: "Kia EV3",
           variant: "Long Range",
-          cons: 17.1,
           segment: "SUV",
           color: "#ea580c",
-        },
-        {
-          model: "BMW iX1",
-          variant: "eDrive20",
-          cons: 16.3,
-          segment: "SUV",
-          color: "#1d4ed8",
-        },
-        {
-          model: "BMW i4",
-          variant: "eDrive40",
-          cons: 15.5,
-          segment: "Sedan",
-          color: "#1d4ed8",
-        },
-        {
-          model: "Peugeot e-208",
-          variant: "54 kWh",
-          cons: 15.2,
-          segment: "Hatchback",
-          color: "#9333ea",
-        },
-        {
-          model: "Opel Corsa Electric",
-          variant: "54 kWh",
-          cons: 15.2,
-          segment: "Hatchback",
-          color: "#b45309",
+          wltp: 13,
+          c90: 15.99,
+          c120: 21.97,
         },
         {
           model: "Dacia Spring",
-          variant: "Electric 100",
-          cons: 15.0,
+          variant: "65HP",
           segment: "City",
           color: "#15803d",
+          wltp: 11.36,
+          c90: 13.96,
+          c120: 22.94,
         },
         {
           model: "Volvo EX30",
           variant: "Single Motor ER",
-          cons: 17.8,
           segment: "SUV",
           color: "#0f766e",
+          wltp: 13.45,
+          c90: 15.8,
+          c120: 22,
         },
         {
           model: "MG MG4",
           variant: "Long Range",
-          cons: 17.1,
           segment: "Hatchback",
           color: "#be123c",
-        },
-        {
-          model: "Audi Q4 e-tron",
-          variant: "40 (82 kWh)",
-          cons: 17.4,
-          segment: "SUV",
-          color: "#6d28d9",
-        },
-        {
-          model: "Porsche Taycan",
-          variant: "Base",
-          cons: 16.6,
-          segment: "Sedan",
-          color: "#b45309",
+          wltp: 14.18,
+          c90: 14.92,
+          c120: 20.9,
         },
         {
           model: "BYD Seal",
           variant: "82.5 kWh RWD",
-          cons: 17.2,
           segment: "Sedan",
           color: "#0369a1",
+          wltp: 15.87,
+          c90: 21,
+          c120: 25,
+        },
+        {
+          model: "BMW iX1",
+          variant: "eDrive20",
+          segment: "SUV",
+          color: "#1d4ed8",
+          wltp: "N/A",
+          c90: "N/A",
+          c120: "N/A",
+        },
+        {
+          model: "BMW i4",
+          variant: "eDrive40",
+          segment: "Sedan",
+          color: "#1d4ed8",
+          wltp: "N/A",
+          c90: "N/A",
+          c120: "N/A",
+        },
+        {
+          model: "Peugeot e-208",
+          variant: "54 kWh",
+          segment: "Hatchback",
+          color: "#9333ea",
+          wltp: "N/A",
+          c90: "N/A",
+          c120: "N/A",
+        },
+        {
+          model: "Opel Corsa Electric",
+          variant: "54 kWh",
+          segment: "Hatchback",
+          color: "#b45309",
+          wltp: "N/A",
+          c90: "N/A",
+          c120: "N/A",
         },
         {
           model: "Polestar 2",
           variant: "Long Range RWD",
-          cons: 16.6,
           segment: "Fastback",
           color: "#065f46",
+          wltp: "N/A",
+          c90: "N/A",
+          c120: "N/A",
         },
       ];
 
-      // ===== STATE =====
       const state = {
         distance: 25000,
         fuelType: "petrol",
@@ -1520,6 +1411,7 @@
         dieselPrice: 1.65,
         hybridPrice: 1.65,
         electricityPrice: 0.173,
+        evMode: "wltp",
       };
 
       function fmt(n, decimals = 2) {
@@ -1542,6 +1434,30 @@
             ? state.dieselPrice
             : state.hybridPrice;
       }
+      function getEvConsumption(ev) {
+        return state.evMode === "90"
+          ? ev.c90
+          : state.evMode === "120"
+            ? ev.c120
+            : ev.wltp;
+      }
+      function getModeLabel() {
+        return state.evMode === "90"
+          ? "kWh/100km at 90 km/h"
+          : state.evMode === "120"
+            ? "kWh/100km at 120 km/h"
+            : "WLTP kWh/100km";
+      }
+      function getModeNote() {
+        return state.evMode === "90"
+          ? "Mode: EVKX 90 km/h real-world cruise"
+          : state.evMode === "120"
+            ? "Mode: EVKX 120 km/h real-world cruise"
+            : "Mode: WLTP combined";
+      }
+      function isNumericValue(v) {
+        return typeof v === "number" && Number.isFinite(v);
+      }
 
       function calc() {
         const km = state.distance;
@@ -1555,7 +1471,6 @@
         const petrolCost = (km / 100) * petrolCostPer100;
         const evCost = (km / 100) * evCostPer100;
         const savings = petrolCost - evCost;
-
         const monthly = savings / 12;
         const evkWh = (km / 100) * evCons;
 
@@ -1569,13 +1484,13 @@
           fmt(savings) + " EUR";
         document.getElementById("savingsSub").textContent =
           `vs. ${state.fuelType.charAt(0).toUpperCase() + state.fuelType.slice(1)} · ${fmt(km, 0)} km/year`;
-
         document.getElementById("statMonthly").textContent =
           fmt(monthly) + " €";
         document.getElementById("statEVkWh").textContent =
           fmt(evkWh, 0) + " kWh";
         document.getElementById("statSavings5yr").textContent =
           fmt(savings * 5, 0) + " €";
+        document.getElementById("evConsUnit").textContent = getModeLabel();
 
         const banner = document.getElementById("savingsBanner");
         if (savings < 0) {
@@ -1589,13 +1504,11 @@
           document.getElementById("savingsLabel").textContent =
             "Annual savings with an electric vehicle";
         }
-
-        // Update table yearly cost column live
         updateTableCosts();
       }
 
-      // ===== BUILD EV TABLE =====
       function consClass(c) {
+        if (!isNumericValue(c)) return "cons-na";
         if (c <= 15.5) return "cons-great";
         if (c <= 17.5) return "cons-good";
         return "cons-avg";
@@ -1603,6 +1516,10 @@
 
       function buildTable() {
         const tbody = document.getElementById("evTableBody");
+        const modeBtn = document.getElementById("tableModeBtn");
+        const modeNote = document.getElementById("evTableModeNote");
+        modeBtn.textContent = getModeLabel();
+        modeNote.textContent = getModeNote();
         tbody.innerHTML = "";
         evModels.forEach((ev, idx) => {
           const tr = document.createElement("tr");
@@ -1614,65 +1531,86 @@
             `Load ${ev.model} ${ev.variant} into calculator`,
           );
 
-          const yearlyCost =
-            (state.distance / 100) * ev.cons * state.electricityPrice;
+          const cons = getEvConsumption(ev);
+          const canUse = isNumericValue(cons);
+          const yearlyCost = canUse
+            ? (state.distance / 100) * cons * state.electricityPrice
+            : null;
           tr.innerHTML = `
-      <td>
-        <div class="ev-model-cell">
-          <span class="ev-category-dot" style="background:${ev.color}"></span>
-          <div>
-            <div class="ev-model-name">${ev.model}</div>
-            <div class="ev-model-variant">${ev.variant}</div>
-          </div>
-        </div>
-      </td>
-      <td>${ev.segment}</td>
-      <td><span class="cons-badge ${consClass(ev.cons)}">${ev.cons.toFixed(1)}</span></td>
-      <td><span class="yearly-cost-cell" id="evRowCost${idx}">${fmt(yearlyCost)} €</span></td>
-      <td><button class="use-btn" onclick="loadEV(${idx}); event.stopPropagation();" aria-label="Use ${ev.model} consumption">Use</button></td>
-    `;
-          tr.addEventListener("click", () => loadEV(idx));
-          tr.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              loadEV(idx);
-            }
-          });
+            <td>
+              <div class="ev-model-cell">
+                <span class="ev-category-dot" style="background:${ev.color}"></span>
+                <div>
+                  <div class="ev-model-name">${ev.model}</div>
+                  <div class="ev-model-variant">${ev.variant}</div>
+                </div>
+              </div>
+            </td>
+            <td>${ev.segment}</td>
+            <td><span class="cons-badge ${consClass(cons)}">${canUse ? cons.toFixed(2) : "N/A"}</span></td>
+            <td><span class="yearly-cost-cell ${canUse ? "" : "na"}" id="evRowCost${idx}">${canUse ? fmt(yearlyCost) + " €" : "N/A"}</span></td>
+            <td><button class="use-btn" ${canUse ? "" : "disabled"} onclick="loadEV(${idx}); event.stopPropagation();" aria-label="Use ${ev.model} consumption">Use</button></td>
+          `;
+          if (canUse) {
+            tr.addEventListener("click", () => loadEV(idx));
+            tr.addEventListener("keydown", (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                loadEV(idx);
+              }
+            });
+          }
           tbody.appendChild(tr);
         });
       }
 
       function updateTableCosts() {
+        document.getElementById("tableModeBtn").textContent = getModeLabel();
+        document.getElementById("evTableModeNote").textContent = getModeNote();
         evModels.forEach((ev, idx) => {
           const cell = document.getElementById("evRowCost" + idx);
+          const badge = document.querySelector(
+            `#evTableBody tr[data-idx="${idx}"] .cons-badge`,
+          );
+          const cons = getEvConsumption(ev);
+          if (badge) {
+            badge.textContent = isNumericValue(cons) ? cons.toFixed(2) : "N/A";
+            badge.className = `cons-badge ${consClass(cons)}`;
+          }
           if (cell) {
-            const yearlyCost =
-              (state.distance / 100) * ev.cons * state.electricityPrice;
-            cell.textContent = fmt(yearlyCost) + " €";
+            if (isNumericValue(cons)) {
+              const yearlyCost =
+                (state.distance / 100) * cons * state.electricityPrice;
+              cell.textContent = fmt(yearlyCost) + " €";
+              cell.classList.remove("na");
+            } else {
+              cell.textContent = "N/A";
+              cell.classList.add("na");
+            }
           }
         });
       }
 
       function loadEV(idx) {
         const ev = evModels[idx];
-        state.evConsumption = ev.cons;
+        const cons = getEvConsumption(ev);
+        if (!isNumericValue(cons)) return;
+        state.evConsumption = cons;
         document.getElementById("evConsumptionVal").textContent =
-          ev.cons.toFixed(1);
-        // Highlight row
+          cons.toFixed(1);
         document
           .querySelectorAll("#evTableBody tr")
           .forEach((r) => r.classList.remove("selected-row"));
-        document
-          .querySelector(`#evTableBody tr[data-idx="${idx}"]`)
-          .classList.add("selected-row");
+        const row = document.querySelector(
+          `#evTableBody tr[data-idx="${idx}"]`,
+        );
+        if (row) row.classList.add("selected-row");
         calc();
       }
 
-      // ===== SLIDER =====
       const slider = document.getElementById("distanceSlider");
       const fill = document.getElementById("sliderFill");
       const display = document.getElementById("distanceDisplay");
-
       function updateSlider() {
         const min = +slider.min,
           max = +slider.max,
@@ -1685,7 +1623,6 @@
       }
       slider.addEventListener("input", updateSlider);
 
-      // ===== FUEL TABS =====
       document.querySelectorAll(".vc-tab").forEach((tab) => {
         tab.addEventListener("click", () => {
           document.querySelectorAll(".vc-tab").forEach((t) => {
@@ -1708,7 +1645,6 @@
         });
       });
 
-      // ===== STEPPERS =====
       function adjustConsumption(type, delta) {
         if (type === "petrol") {
           const key = state.fuelType + "Consumption";
@@ -1723,7 +1659,6 @@
             ) / 10;
           document.getElementById("evConsumptionVal").textContent =
             state.evConsumption.toFixed(1);
-          // Deselect table row on manual edit
           document
             .querySelectorAll("#evTableBody tr")
             .forEach((r) => r.classList.remove("selected-row"));
@@ -1731,7 +1666,6 @@
         calc();
       }
 
-      // ===== PRICE INPUTS =====
       document.getElementById("petrolPrice").addEventListener("input", (e) => {
         const v = +e.target.value;
         if (v > 0) {
@@ -1751,7 +1685,17 @@
           }
         });
 
-      // ===== THEME TOGGLE =====
+      document.getElementById("tableModeBtn").addEventListener("click", () => {
+        state.evMode =
+          state.evMode === "wltp"
+            ? "90"
+            : state.evMode === "90"
+              ? "120"
+              : "wltp";
+        buildTable();
+        calc();
+      });
+
       (function () {
         const t = document.querySelector("[data-theme-toggle]");
         const r = document.documentElement;
@@ -1777,7 +1721,6 @@
         }
       })();
 
-      // ===== INIT =====
       buildTable();
       updateSlider();
     </script>
