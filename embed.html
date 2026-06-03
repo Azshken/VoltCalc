@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="VoltCalc is a B2B EV running-cost calculator with white-label embed support."
-    />
-    <title>VoltCalc</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <title>VoltCalc Embed</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,50 +15,6 @@
   </head>
   <body>
     <div class="app-wrapper">
-      <header class="app-header">
-        <div class="logo">
-          <div class="logo-icon">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              stroke-width="2.2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-label="VoltCalc logo"
-            >
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
-          </div>
-          <span class="logo-text">Volt<span>Calc</span></span>
-        </div>
-        <button
-          class="theme-toggle"
-          data-theme-toggle
-          aria-label="Switch to dark mode"
-        >
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-        </button>
-      </header>
-      <div class="hero">
-        <h1>How much will you save yearly with an EV?</h1>
-        <p>
-          Compare annual running costs of an electric vehicle vs a petrol or
-          diesel car based on your actual driving distance and local energy
-          prices.
-        </p>
-      </div>
       <div class="distance-section">
         <div class="card">
           <div class="distance-header">
@@ -88,7 +41,6 @@
           </div>
         </div>
       </div>
-      <div class="section-title">Annual cost comparison</div>
       <div class="comparison-grid">
         <div class="vehicle-card" id="petrolCard">
           <div class="vc-header">
@@ -301,7 +253,6 @@
         </div>
         <div class="savings-amount" id="savingsAmount">– EUR</div>
       </div>
-      <div class="section-title">Running cost stats</div>
       <div class="breakeven-card">
         <div class="breakeven-grid">
           <div class="stat-box">
@@ -318,59 +269,12 @@
           </div>
         </div>
       </div>
-      <div class="ev-table-card">
-        <div class="ev-table-header">
-          <div>
-            <div class="ev-table-title">
-              Selected EVs — EVKX WLTP and real-world cruise consumption
-            </div>
-            <div class="ev-table-subtitle">
-              Click a row to load its selected consumption into the calculator
-            </div>
-          </div>
-          <div class="ev-table-note" id="evTableModeNote">
-            Mode: WLTP combined
-          </div>
-        </div>
-        <div class="ev-table-scroll">
-          <table aria-label="Popular EV consumption data">
-            <thead>
-              <tr>
-                <th>Model</th>
-                <th>Segment</th>
-                <th>
-                  <button
-                    class="table-mode-btn"
-                    id="tableModeBtn"
-                    type="button"
-                    aria-label="Switch consumption column"
-                  >
-                    WLTP kWh/100km
-                  </button>
-                </th>
-                <th>Yearly cost *</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="evTableBody"></tbody>
-          </table>
-        </div>
-      </div>
       <p class="disclaimer">
-        * Yearly cost calculated using the electricity price and distance set
-        above. Consumption, WLTP range, and real-range cruise estimates are
-        based on EVKX data. The 90 km/h and 120 km/h modes use EVKX real-world
-        “perfect condition” figures where available; unavailable values are
-        shown as N/A. This calculator is for informational purposes only and
-        does not include vehicle purchase price, maintenance, insurance, or
-        other ownership costs.
+        This calculator is for informational purposes only and does not include
+        vehicle purchase price, maintenance, insurance, or other ownership
+        costs.
       </p>
     </div>
-    <script src="./assets/voltcalc-core.js" type="module"></script>
-    <script src="./assets/voltcalc-ui.js" type="module"></script>
-    <script src="./assets/voltcalc-table.js" type="module"></script>
-    <script src="./assets/voltcalc-theme.js" type="module"></script>
-    <script src="./assets/voltcalc-embed.js" type="module"></script>
     <script type="module">
       import { initApp } from "./assets/voltcalc-app.js";
       initApp();
