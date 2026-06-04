@@ -2,6 +2,8 @@
 
 A lightweight web calculator for comparing yearly driving costs of **electric vehicles vs petrol, diesel, and hybrid cars**.
 
+### Live demo: https://voltcalc-lake.vercel.app/
+
 ## Features
 
 - Compare yearly running costs based on:
@@ -27,8 +29,6 @@ No framework, no build step, and no dependencies.
 # VoltCalc
 
 VoltCalc is a static B2B EV running-cost calculator with iframe embed support, per-client branding, and a modular front-end structure.
-
-### Live demo: https://voltcalc-lake.vercel.app/
 
 ## What it does
 
